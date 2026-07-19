@@ -1,0 +1,10 @@
+[project]
+name = "scholarstack-pipeline"
+version = "0.1.0"
+description = "MIT manuscript pipeline for ScholarStack — grounded drafting with mechanical citation gates"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["requests"]
+
+[tool.pytest.ini_options]
+markers = ["integration: needs live LightRAG / DeepSeek"]

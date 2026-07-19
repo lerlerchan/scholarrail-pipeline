@@ -1,7 +1,7 @@
 [project]
-name = "scholarstack-pipeline"
+name = "scholarrail-pipeline"
 version = "0.1.0"
-description = "MIT manuscript pipeline for ScholarStack — grounded drafting with mechanical citation gates"
+description = "MIT manuscript pipeline for ScholarRail — grounded drafting with mechanical citation gates"
 license = "MIT"
 requires-python = ">=3.10"
 dependencies = ["requests"]

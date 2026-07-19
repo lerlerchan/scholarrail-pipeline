@@ -1,4 +1,4 @@
-"""Interactive API-key setup for ScholarStack.
+"""Interactive API-key setup for ScholarRail.
 
 Prompts for each key (input hidden, blank = keep existing) and writes
 ~/scholarstack/.env with mode 600. Never prints key values.
@@ -29,7 +29,7 @@ def load_env() -> dict:
 
 def main() -> None:
     env = load_env()
-    print(f"ScholarStack key setup — writing to {ENV}\n"
+    print(f"ScholarRail key setup — writing to {ENV}\n"
           "Press Enter to keep an existing value; input is hidden.\n")
     for var, (desc, mirror) in KEYS.items():
         state = "set" if env.get(var) or (mirror and env.get(mirror)) else "NOT SET"

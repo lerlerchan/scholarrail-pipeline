@@ -13,8 +13,6 @@ Usage:
   verified.json  — citation_verifier output
 Outputs per stage: <workdir>/manuscript/<NN>_<stage>.md, then paper.tex/pdf.
 
-ponytail: imports shared K45VD modules from ~/scholarstack via sys.path;
-package properly (pyproject + extracted lib) before public release.
 """
 import json
 import logging
@@ -24,13 +22,11 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-sys.path.insert(0, str(Path.home() / "scholarstack"))
+import requests
 
-import requests  # noqa: E402
-
-from draft_section import check_citations, extract_citations  # noqa: E402
-from llm import chat  # noqa: E402
-from stages import DRAFT_STAGES, PEER_REVIEW_PROMPT  # noqa: E402
+from .citations import check_citations  # noqa: F401 (extract kept in citations)
+from .llm import chat
+from .stages import DRAFT_STAGES, PEER_REVIEW_PROMPT
 
 logger = logging.getLogger(__name__)
 

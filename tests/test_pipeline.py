@@ -9,8 +9,7 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-import pipeline
-import stages
+from scholarrail_pipeline import pipeline, stages
 
 
 def _setup_workdir(tmp_path):

@@ -17,8 +17,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
-      - run: pip install requests pytest
-      # ponytail: unit tier only in CI; integration needs live LightRAG+DeepSeek on K45VD
-      - run: pytest tests -m "not integration" --ignore=tests/test_pipeline.py -q || true
-      # test_pipeline.py imports ~/scholarstack shared modules — runs on K45VD only
-      # until package extraction (tracked in README TODO)
+      - run: pip install -e . pytest
+      # integration tier needs live LightRAG+DeepSeek on K45VD; unit tier runs here
+      - run: pytest tests -m "not integration" -q

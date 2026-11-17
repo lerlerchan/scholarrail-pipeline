@@ -24,4 +24,4 @@ python pipeline.py <workdir> [--auto] [--from STAGE]
 
 ## Requirements
 
-LightRAG server on `localhost:9621`, DeepSeek API key, `pandoc` + `tectonic` on PATH. Models per ScholarRail PRD §4: `deepseek-v4-pro` for drafting.
+LightRAG server on `localhost:9621`, DeepSeek API key, `pandoc` + `tectonic` on PATH. Models per ScholarRail PRD §4: `deepseek-flash` for drafting.

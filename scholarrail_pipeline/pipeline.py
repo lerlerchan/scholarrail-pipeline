@@ -63,7 +63,7 @@ def draft_stage(name: str, template: str, spine: dict, pool: set[str],
         f"Write the section now in Markdown."
     )
     for attempt in range(1 + MAX_REDRAFTS):
-        text = chat(prompt, model="deepseek-v4-pro", temperature=0.4)
+        text = chat(prompt, model="deepseek-flash", temperature=0.4)
         bad = check_citations(text, pool)
         audit({"gate": "stage_citation_check", "stage": name,
                "attempt": attempt, "pass": not bad, "violations": bad})
@@ -121,7 +121,7 @@ def run(workdir: str, auto: bool = False, start_from: str | None = None) -> Path
 
     # peer-review simulation (informative, always runs)
     review = chat(PEER_REVIEW_PROMPT.format(manuscript=prior[-60000:]),
-                  model="deepseek-v4-pro")
+                  model="deepseek-flash")
     (mdir / "peer_review_simulation.md").write_text(review)
     audit({"gate": "peer_review_sim", "stage": "post-draft", "pass": True})
 
